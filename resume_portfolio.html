@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murugappan PR | Systems Engineer</title>
+  
+  <!-- Modern Clean Typography & Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons & Animate On Scroll (AOS) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#2563eb',
+              indigo: '#4f46e5',
+              teal: '#0d9488',
+              emerald: '#10b981',
+              dark: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .feature-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+    }
+    .active-pill {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #ffffff !important;
+      box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          M
+        </div>
+        <div>
+          <span class="font-extrabold text-slate-900 text-lg leading-tight block">Murugappan PR</span>
+          <span class="text-xs text-slate-500 font-medium">Systems Engineer @ TCS</span>
+        </div>
+      </a>
+
+      <nav class="hidden sm:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="#work" class="hover:text-blue-600 transition-colors">What I Do</a>
+        <a href="#projects" class="hover:text-blue-600 transition-colors">Patent & Projects</a>
+        <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Inline GitHub Icon Button -->
+        <a href="https://github.com/Vm0909?tab=repositories" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-black transition-all flex items-center justify-center" title="GitHub Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <!-- Inline LinkedIn Icon Button -->
+        <a href="https://www.linkedin.com/in/murugappan-pr-ba4948258/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl border border-slate-200 text-blue-600 hover:bg-blue-50 transition-all flex items-center justify-center" title="LinkedIn Profile">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46v-8.37M7.85 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+          </svg>
+        </a>
+
+        <a href="Murugappan%20Resume.pdf" download class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 transition-all">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-blue-600"></i> Resume
+        </a>
+        <a href="mailto:mrprmurugappan@gmail.com" class="px-3.5 py-2 text-xs sm:text-sm font-bold rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="space-y-24 max-w-5xl mx-auto px-6 py-12">
+
+    <!-- Hero Profile Section -->
+    <section id="hero" class="grid md:grid-cols-12 gap-10 items-center pt-4">
+      
+      <!-- Profile Picture Card -->
+      <div class="md:col-span-5 flex justify-center" data-aos="fade-right">
+        <div class="relative w-64 h-64 sm:w-72 sm:h-72">
+          <div class="absolute -inset-2 bg-gradient-to-tr from-blue-500 to-indigo-500 rounded-3xl blur-lg opacity-25"></div>
+          <div class="relative w-full h-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-100">
+            <img 
+              src="profile.jpg" 
+              alt="Murugappan PR - Systems Engineer" 
+              class="w-full h-full object-cover object-top"
+              onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'"
+            >
+          </div>
+          <div class="absolute -bottom-3 -right-2 bg-white px-3 py-1.5 rounded-full shadow-md border border-slate-100 flex items-center gap-2 text-xs font-bold text-slate-800">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Open to Roles
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Intro -->
+      <div class="md:col-span-7 space-y-5 text-center md:text-left" data-aos="fade-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Chennai, Tamil Nadu • Available Worldwide
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Hi, I'm <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Murugappan</span>.
+        </h1>
+
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          I'm a <strong>Systems Engineer at TCS</strong> (<span id="dynamic-exp" class="font-bold text-blue-600">calculating...</span>) working on the <strong>Amgen</strong> account. I build smart Python automation utilities, connect enterprise 3DEXPERIENCE PLM platforms with Databricks, and ensure life-sciences software is fully validated and audit-proof.
+        </p>
+
+        <!-- Quick Summary Pills -->
+        <div class="flex flex-wrap gap-2 justify-center md:justify-start pt-1 text-xs font-semibold text-slate-700">
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center gap-1.5">
+            <i data-lucide="briefcase" class="w-4 h-4 text-indigo-600"></i> <span id="dynamic-exp-pill">Calculating Experience...</span>
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center gap-1.5">
+            <i data-lucide="award" class="w-4 h-4 text-amber-500"></i> Patent Innovator
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center gap-1.5">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-600"></i> B.E ECE (RMK CET, Distinction)
+          </span>
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> GxP & ALM Validated
+          </span>
+        </div>
+
+        <!-- Call to Actions with Direct SVG Social Icons -->
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start pt-3">
+          <a href="https://www.linkedin.com/in/murugappan-pr-ba4948258/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46v-8.37M7.85 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+            </svg>
+            LinkedIn Profile
+          </a>
+
+          <a href="https://github.com/Vm0909?tab=repositories" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub Repos
+          </a>
+
+          <a href="Murugappan%20Resume.pdf" download class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-sm shadow-sm transition-all flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i> Resume
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Professional Experience: Interactive Storyboard -->
+    <section id="work" class="space-y-8" data-aos="fade-up">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+          Current Role @ TCS (Amgen Account)
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          What I Deliver Every Day
+        </h2>
+        <p class="text-slate-500 text-sm">
+          Joined in November 2024 • Currently leading 3 parallel enterprise automation workstreams.
+        </p>
+      </div>
+
+      <!-- Interactive 3-Card Carousel/Selector -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm space-y-6">
+        
+        <!-- Toggle Tabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button onclick="selectWork(0)" id="work-btn-0" class="active-pill p-4 rounded-2xl text-left border border-transparent transition-all">
+            <div class="flex items-center gap-2 font-bold text-sm mb-1">
+              <i data-lucide="file-check" class="w-4 h-4"></i> Auto-PDF Engine
+            </div>
+            <div class="text-xs opacity-90">Automated CDOCS generation & PLM attachment</div>
+          </button>
+
+          <button onclick="selectWork(1)" id="work-btn-1" class="p-4 rounded-2xl text-left bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all">
+            <div class="flex items-center gap-2 font-bold text-sm mb-1">
+              <i data-lucide="database" class="w-4 h-4 text-blue-600"></i> Databricks ETL
+            </div>
+            <div class="text-xs text-slate-500">Extracting 3DS PLM items to lakehouse</div>
+          </button>
+
+          <button onclick="selectWork(2)" id="work-btn-2" class="p-4 rounded-2xl text-left bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all">
+            <div class="flex items-center gap-2 font-bold text-sm mb-1">
+              <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-600"></i> Excel Data Loader
+            </div>
+            <div class="text-xs text-slate-500">Batch object creation with rollback safety</div>
+          </button>
+        </div>
+
+        <!-- Dynamic Content Display Box -->
+        <div id="work-details" class="p-6 rounded-2xl bg-gradient-to-br from-blue-50/50 via-slate-50 to-white border border-blue-100 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/70 pb-3">
+            <h3 class="text-lg font-bold text-slate-900" id="work-title">1. Automated C-Docs PDF Engine</h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-100 text-blue-700 self-start sm:self-auto" id="work-badge">Production Utility</span>
+          </div>
+
+          <p class="text-slate-600 text-sm leading-relaxed" id="work-desc">
+            Engineered an automated Python utility that triggers when parts/documents are created in 3DEXPERIENCE. It generates regulatory CDOCS PDF packages and automatically attaches them back to the parent item using 3DS Web Services.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-xs">
+              <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> The Value to Amgen
+              </span>
+              <p class="text-xs text-slate-500" id="work-val">Replaced 100% of tedious manual PDF compiling, preventing human attachment errors and speeding up document release.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-xs">
+              <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
+                <i data-lucide="cpu" class="w-4 h-4 text-blue-600"></i> Tech & Validation
+              </span>
+              <p class="text-xs text-slate-500" id="work-tech">Python, Dassault Systèmes REST APIs, IQ/OQ Test Matrices signed off in HP ALM.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Patent & Real Repositories Section -->
+    <section id="projects" class="space-y-8" data-aos="fade-up">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
+          Featured Highlights
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Patent & Live GitHub Projects
+        </h2>
+        <p class="text-slate-500 text-sm">
+          A combination of published intellectual property and repositories straight from my GitHub.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Patent Highlight Card -->
+        <div class="feature-card bg-white rounded-3xl p-7 border-2 border-amber-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 flex items-center gap-1.5">
+                <i data-lucide="award" class="w-4 h-4 text-amber-600"></i> Published Patent
+              </span>
+              <span class="text-xs font-bold font-mono text-slate-400">#202441034951 A</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">Secure Tire Health Monitoring via ML</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Researched and built a computer-vision algorithm that measures tire tread depth health from photos to accurately alert drivers and prevent high-speed blowouts before they happen.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Python • OpenCV • ML Models</span>
+            <span class="text-xs font-bold text-amber-700">Official IPR Patent</span>
+          </div>
+        </div>
+
+        <!-- Live Repository: tiips-website -->
+        <div class="feature-card bg-white rounded-3xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 flex items-center gap-1.5">
+                <i data-lucide="globe" class="w-4 h-4 text-blue-600"></i> Interactive Web Platform
+              </span>
+              <a href="https://github.com/Vm0909/tiips-website" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-slate-500 hover:text-blue-600 flex items-center gap-1">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Vm0909/tiips-website
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">TIIPS Advisory & Financial Platform</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Designed and coded an interactive financial planning portal with calculation tools, policy comparisons, and dynamic DOM quote estimators hosted on GitHub Pages.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">JavaScript • HTML5 • CSS3</span>
+            <a href="https://github.com/Vm0909/tiips-website" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:underline">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Live Repository: TCS-AI-FRIDAY -->
+        <div class="feature-card bg-white rounded-3xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 flex items-center gap-1.5">
+                <i data-lucide="bot" class="w-4 h-4 text-indigo-600"></i> AI Assistant
+              </span>
+              <a href="https://github.com/Vm0909/TCS-AI-FRIDAY" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-slate-500 hover:text-indigo-600 flex items-center gap-1">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Vm0909/TCS-AI-FRIDAY
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">TCS-AI-FRIDAY Intelligent Assistant</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Automated virtual assistant workflow engineered to handle voice/text commands, parse developer tasks, and streamline workspace productivity.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Python • Task Automation • AI Logic</span>
+            <a href="https://github.com/Vm0909/TCS-AI-FRIDAY" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-indigo-600 hover:underline">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Live Repository: Steganography -->
+        <div class="feature-card bg-white rounded-3xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 flex items-center gap-1.5">
+                <i data-lucide="lock" class="w-4 h-4 text-emerald-600"></i> Cybersecurity
+              </span>
+              <a href="https://github.com/Vm0909/Steganography" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-slate-500 hover:text-emerald-600 flex items-center gap-1">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Vm0909/Steganography
+              </a>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">Image Steganography Engine</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Spatial domain encryption module concealing confidential payload files within carrier image pixels without visible degradation in visual quality.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Python • Cryptography • Image Processing</span>
+            <a href="https://github.com/Vm0909/Steganography" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-600 hover:underline">View Repository &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills & Capabilities Section -->
+    <section id="skills" class="space-y-8" data-aos="fade-up">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+          Skills at a Glance
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          What I Bring to Your Team
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+            <i data-lucide="code" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Programming & Automation</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">Python (API automation, scripts, data extraction), JavaScript, C, Java fundamentals, and SQL (MySQL, SQLite).</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-3">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Enterprise PLM & Web Services</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">Dassault Systèmes 3DEXPERIENCE, REST APIs, CDOCS, Databricks ETL integrations, and Excel bulk loaders.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Validation & Compliance</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">GxP standards for biopharma, HP ALM test execution, IQ (Installation Qualification), and OQ documentation.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Friendly Recruiter Contact Banner -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 sm:p-12 text-white shadow-xl text-center space-y-5" data-aos="zoom-in">
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+        Let's discuss how I can help your team.
+      </h2>
+      <p class="text-blue-100 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        I am available to join forward-thinking engineering and automation teams across India or abroad.
+      </p>
+
+      <div class="flex flex-wrap justify-center items-center gap-3 pt-2">
+        <a href="https://www.linkedin.com/in/murugappan-pr-ba4948258/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white text-blue-700 font-bold text-sm shadow hover:bg-blue-50 transition-all flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46v-8.37M7.85 6.25a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+          </svg>
+          Connect on LinkedIn
+        </a>
+        <a href="mailto:mrprmurugappan@gmail.com" class="px-6 py-3.5 rounded-xl bg-blue-700/80 hover:bg-blue-700 border border-blue-400 text-white font-bold text-sm transition-all flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4"></i> mrprmurugappan@gmail.com
+        </a>
+        <a href="tel:+919444388419" class="px-6 py-3.5 rounded-xl bg-blue-700/80 hover:bg-blue-700 border border-blue-400 text-white font-bold text-sm transition-all flex items-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4"></i> +91 9444388419
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Minimal Footer -->
+  <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>Murugappan PR • Systems Engineer @ TCS • RMK College of Engineering and Technology[cite: 1, 2]</div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/Vm0909" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800">GitHub (Vm0909)[cite: 3]</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/murugappan-pr-ba4948258/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">LinkedIn[cite: 2]</a>
+        <span>•</span>
+        <span>Patent: 202441034951 A[cite: 1]</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Light Interactive Script -->
+  <script>
+    // Initialize Lucide icons & smooth scroll animations
+    lucide.createIcons();
+    AOS.init({ once: true, duration: 600 });
+
+    // 1. Dynamic Experience Calculator (Automatically updates from Nov 2024)
+    function updateExperience() {
+      const startDate = new Date(2024, 10, 1); // Month is 0-indexed: 10 = November 2024
+      const today = new Date();
+      
+      const totalMonths = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
+      const years = (totalMonths / 12).toFixed(1);
+      
+      const expString = `${years}+ Years Experience`;
+      
+      const inlineExp = document.getElementById('dynamic-exp');
+      const pillExp = document.getElementById('dynamic-exp-pill');
+      
+      if (inlineExp) inlineExp.innerText = expString;
+      if (pillExp) pillExp.innerText = expString;
+    }
+    updateExperience();
+
+    // 2. Interactive Work Tabs Controller
+    const workItems = [
+      {
+        title: "1. Automated C-Docs PDF Engine",
+        badge: "Production Utility",
+        desc: "Engineered an automated Python utility that triggers when parts/documents are created in 3DEXPERIENCE. It generates regulatory CDOCS PDF packages and automatically attaches them back to the parent item using 3DS Web Services.",
+        val: "Replaced 100% of tedious manual PDF compiling, preventing human attachment errors and speeding up document release.",
+        tech: "Python, Dassault Systèmes REST APIs, IQ/OQ Test Matrices signed off in HP ALM."
+      },
+      {
+        title: "2. EDF Databricks Lakehouse Integration",
+        badge: "Active ETL Pipeline",
+        desc: "Designed an automated extraction routine that queries modified 3DEXPERIENCE parts, structures, and specifications via Web Services, transforming them and streaming them into Databricks lakehouse tables.",
+        val: "Connects engineering data directly to Amgen enterprise analytics dashboards with zero manual file exporting.",
+        tech: "Python, Databricks Delta Tables, REST Web Services, Automated Verification."
+      },
+      {
+        title: "3. Bulk Excel Object Data Loader",
+        badge: "Internal Engineering Tool",
+        desc: "Architected a bulk ingestion tool that lets engineers define parts, hierarchies, and metadata inside familiar Excel templates, validating every attribute before committing batch creation into 3DEXPERIENCE.",
+        val: "Saves dozens of hours when setting up new bill-of-materials and features clear, cell-by-cell rollback reporting.",
+        tech: "Python, OpenPyXL, 3DS REST Endpoints, Regulated Error Logging."
+      }
+    ];
+
+    function selectWork(index) {
+      const item = workItems[index];
+      
+      document.getElementById('work-title').innerText = item.title;
+      document.getElementById('work-badge').innerText = item.badge;
+      document.getElementById('work-desc').innerText = item.desc;
+      document.getElementById('work-val').innerText = item.val;
+      document.getElementById('work-tech').innerText = item.tech;
+
+      for (let i = 0; i < 3; i++) {
+        const btn = document.getElementById(`work-btn-${i}`);
+        if (i === index) {
+          btn.className = "active-pill p-4 rounded-2xl text-left border border-transparent transition-all";
+        } else {
+          btn.className = "p-4 rounded-2xl text-left bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

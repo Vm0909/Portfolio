@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murugappan PR | Systems Engineer & Automation Architect</title>
+  
+  <!-- Fonts & Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons & AOS (Animate on Scroll) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              violet: '#8b5cf6',
+              dark: '#030712',
+              card: '#0b1329',
+              border: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #030712; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+    /* Glassmorphism & Hover Transformations */
+    .glass-card {
+      background: rgba(11, 19, 41, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.25);
+    }
+
+    /* Ambient Background Orbs Animation */
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-30px) scale(1.08); }
+    }
+    .orb-float-slow {
+      animation: floatOrb 9s ease-in-out infinite;
+    }
+    .orb-float-delayed {
+      animation: floatOrb 11s ease-in-out 3s infinite;
+    }
+
+    /* Custom Cursor Follower */
+    #cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 450px;
+      height: 450px;
+      margin-left: -225px;
+      margin-top: -225px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(139, 92, 246, 0.04) 45%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate3d(-999px, -999px, 0);
+      transition: opacity 0.3s ease;
+    }
+
+    /* Interactive Pipeline Fade Transitions */
+    .flow-step-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .step-animating {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan/25 selection:text-brand-cyan overflow-x-hidden relative">
+
+  <!-- Interactive Cursor Spotlight Glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- Background Ambient Floating Meshes -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="orb-float-slow absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-brand-cyan/15 rounded-full blur-[130px]"></div>
+    <div class="orb-float-delayed absolute top-1/2 -right-40 w-[30rem] h-[30rem] bg-brand-violet/15 rounded-full blur-[140px]"></div>
+    <div class="orb-float-slow absolute -bottom-20 left-1/3 w-[30rem] h-[30rem] bg-brand-emerald/10 rounded-full blur-[130px]"></div>
+  </div>
+
+  <!-- Smooth Sticky Navigation -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 bg-brand-dark/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 font-mono font-bold text-lg text-white group">
+        <span class="text-brand-cyan group-hover:rotate-12 transition-transform">&gt;</span> murugappan.pr<span class="animate-pulse text-brand-emerald">_</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="#experience" class="hover:text-brand-cyan transition-colors">Experience</a>
+        <a href="#pipeline" class="hover:text-brand-cyan transition-colors">Architecture</a>
+        <a href="#projects" class="hover:text-brand-cyan transition-colors">Projects</a>
+        <a href="#terminal" class="hover:text-brand-cyan transition-colors">Interactive CLI</a>
+        <a href="#skills" class="hover:text-brand-cyan transition-colors">Stack</a>
+      </nav>
+      <a href="mailto:mrprmurugappan@gmail.com" class="px-4 py-2 text-xs font-mono font-semibold rounded-lg bg-cyan-500/10 text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-black hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] active:scale-95 transition-all flex items-center gap-2">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i> Get in Touch
+      </a>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-6xl mx-auto px-6 space-y-32 pt-12 pb-24">
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-8 md:pt-16 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6" data-aos="fade-up" data-aos-duration="900">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          Available Worldwide • Systems Engineer @ TCS
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Architecting <span class="bg-gradient-to-r from-brand-cyan via-teal-300 to-brand-emerald bg-clip-text text-transparent">Enterprise Automation</span> & Scalable Systems.
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
+          Hi, I'm <strong class="text-white">Murugappan PR</strong>. Systems Engineer at Tata Consultancy Services, engineering production-grade Python automation utilities, 3DEXPERIENCE PLM web service integrations, and validated data pipelines for global biopharma (Amgen).
+        </p>
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#terminal" class="px-6 py-3 rounded-lg bg-gradient-to-r from-brand-cyan to-teal-500 text-slate-950 font-semibold text-sm hover:opacity-95 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:-translate-y-0.5 active:scale-95 transition-all flex items-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4"></i> Test Interactive Terminal
+          </a>
+          <a href="#projects" class="px-6 py-3 rounded-lg glass-card border border-slate-700 hover:border-brand-cyan/60 text-slate-200 font-semibold text-sm hover:-translate-y-0.5 active:scale-95 transition-all flex items-center gap-2">
+            <i data-lucide="folder-git-2" class="w-4 h-4 text-brand-cyan"></i> View Innovations & Patent
+          </a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-xs font-mono text-slate-400">
+          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-cyan"></i> Chennai / Bengaluru</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-brand-emerald"></i> Patent Published</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Terminal Display -->
+      <div class="lg:col-span-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 shadow-2xl relative">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-4">
+            <div class="flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <span class="text-xs font-mono text-slate-400">profile_summary.py</span>
+          </div>
+          <div class="font-mono text-xs sm:text-sm space-y-2.5 text-slate-300">
+            <p><span class="text-brand-violet">class</span> <span class="text-teal-300">SoftwareEngineer</span>:</p>
+            <p class="pl-4"><span class="text-brand-cyan">name</span> = <span class="text-amber-300">"Murugappan PR"</span></p>
+            <p class="pl-4"><span class="text-brand-cyan">employer</span> = <span class="text-amber-300">"TCS (Client: Amgen)"</span></p>
+            <p class="pl-4"><span class="text-brand-cyan">primary_stack</span> = [<span class="text-amber-300">"Python"</span>, <span class="text-amber-300">"3DS WebServices"</span>, <span class="text-amber-300">"Databricks"</span>]</p>
+            <p class="pl-4"><span class="text-brand-cyan">focus</span> = [<span class="text-amber-300">"Enterprise Automation"</span>, <span class="text-amber-300">"GxP Validation"</span>, <span class="text-amber-300">"RAG/AI"</span>]</p>
+            <p class="pl-4"><span class="text-brand-cyan">status</span> = <span class="text-emerald-400">"Deploying Production Solutions"</span></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-2 text-center">
+            <div>
+              <div class="text-xl font-bold text-white">3+</div>
+              <div class="text-[11px] font-mono text-slate-400">Parallels Pipelines</div>
+            </div>
+            <div>
+              <div class="text-xl font-bold text-brand-cyan">GxP</div>
+              <div class="text-[11px] font-mono text-slate-400">IQ/OQ/ALM Compliant</div>
+            </div>
+            <div>
+              <div class="text-xl font-bold text-brand-emerald">1</div>
+              <div class="text-[11px] font-mono text-slate-400">Published Patent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience: TCS & Enterprise Biopharma Impact -->
+    <section id="experience" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
+      <div>
+        <span class="text-brand-cyan font-mono text-xs uppercase tracking-widest">Industry Experience</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Enterprise Automation & Systems Engineering</h2>
+      </div>
+
+      <div class="glass-card rounded-2xl p-8 border border-slate-800 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-6">
+          <div>
+            <h3 class="text-xl font-bold text-white flex items-center gap-3">
+              Systems Engineer <span class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-brand-cyan border border-brand-cyan/20">Full-Time</span>
+            </h3>
+            <p class="text-slate-400 text-sm mt-1">Tata Consultancy Services • <span class="text-slate-300">Client: Amgen (Biotechnology)</span></p>
+          </div>
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 self-start md:self-auto">
+            Nov 2024 — Present
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 pt-2">
+          <!-- Parallel Workstream 1 -->
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/50 hover:-translate-y-1 transition-all space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-brand-cyan">
+              <i data-lucide="file-check-2" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-semibold text-white text-sm">Automated C-Docs PDF Engine</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Engineered end-to-end Python utility orchestrating dynamic CDOCS PDF generation and bi-directional object attachment inside 3DEXPERIENCE PLM via REST web services.
+            </p>
+          </div>
+
+          <!-- Parallel Workstream 2 -->
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-400/50 hover:-translate-y-1 transition-all space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+              <i data-lucide="database-zap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-semibold text-white text-sm">EDF Databricks Integration</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Designed enterprise data extraction routines retrieving complex PLM engineering objects and marshaling them into Databricks lakehouse layers for cross-functional analytics.
+            </p>
+          </div>
+
+          <!-- Parallel Workstream 3 -->
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-violet-400/50 hover:-translate-y-1 transition-all space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
+              <i data-lucide="table" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-semibold text-white text-sm">Bulk Excel Data Loader Utility</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Architected a fault-tolerant Excel ingestion pipeline parsing tabular schematics and batch-generating enterprise objects and attributes within 3DS PLM with rollback recovery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Compliance & Quality -->
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <i data-lucide="shield-check" class="w-6 h-6 text-brand-cyan shrink-0"></i>
+            <div class="text-xs text-slate-300">
+              <span class="font-semibold text-white">Regulated GxP & ALM Compliance:</span> Author of IQ (Installation Qualification), OQ (Operational Qualification), and pre/post verification approval matrices in HP ALM for life-sciences rigor.
+            </div>
+          </div>
+          <span class="text-[11px] font-mono px-3 py-1 rounded bg-slate-800 text-slate-300 shrink-0">HP ALM Verified</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Architecture Simulator -->
+    <section id="pipeline" class="space-y-6" data-aos="fade-up" data-aos-duration="800">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-brand-emerald font-mono text-xs uppercase tracking-widest">Interactive Demonstration</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Enterprise Automation Flow Simulator</h2>
+        </div>
+        <p class="text-xs text-slate-400 max-w-sm">
+          Click the workstreams below to smoothly transition and trace how data, APIs, and qualifications flow.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 space-y-6">
+        <!-- Interactive Mode Selectors -->
+        <div class="flex flex-wrap gap-3">
+          <button onclick="switchFlow('pdf')" id="btn-pdf" class="px-4 py-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+            01. Auto-PDF Attach
+          </button>
+          <button onclick="switchFlow('databricks')" id="btn-databricks" class="px-4 py-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+            02. EDF Databricks ETL
+          </button>
+          <button onclick="switchFlow('loader')" id="btn-loader" class="px-4 py-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700">
+            03. Excel Object Loader
+          </button>
+        </div>
+
+        <!-- Dynamic Animated Pipeline Steps -->
+        <div class="grid md:grid-cols-4 gap-4 pt-4" id="flow-container">
+          <!-- Step 1 -->
+          <div class="flow-step-card p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+            <span class="text-[10px] font-mono text-brand-cyan uppercase tracking-wider">Step 1: Ingestion</span>
+            <h5 class="text-sm font-semibold text-white" id="step1-title">PLM Object Trigger</h5>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step1-desc">3DEXPERIENCE lifecycle event or API webhook triggers Python automation service.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flow-step-card p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+            <span class="text-[10px] font-mono text-brand-emerald uppercase tracking-wider">Step 2: Processing</span>
+            <h5 class="text-sm font-semibold text-white" id="step2-title">CDOCS Assembly</h5>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step2-desc">Python utility extracts structured metadata and compiles regulatory compliant PDF documentation.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flow-step-card p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+            <span class="text-[10px] font-mono text-brand-violet uppercase tracking-wider">Step 3: WebService Dispatch</span>
+            <h5 class="text-sm font-semibold text-white" id="step3-title">Attachment Ingestion</h5>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step3-desc">Invokes Dassault Systèmes REST endpoints to lock and attach PDF to target PLM parent node.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="flow-step-card p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+            <span class="text-[10px] font-mono text-teal-400 uppercase tracking-wider">Step 4: Validation</span>
+            <h5 class="text-sm font-semibold text-white" id="step4-title">ALM Qualification Log</h5>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step4-desc">Audit trail committed under GxP standards; IQ/OQ execution records saved into HP ALM.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Projects (Innovations, Patent, & AI Pipelines) -->
+    <section id="projects" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
+      <div>
+        <span class="text-brand-violet font-mono text-xs uppercase tracking-widest">Selected Works & Research</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Patents, Web Apps & ML Systems</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Patent Project -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded border border-amber-400/20 flex items-center gap-1.5">
+                <i data-lucide="award" class="w-3.5 h-3.5"></i> Patent Published
+              </span>
+              <span class="text-xs font-mono text-slate-400">#202441034951 A</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Secure Tire Health Monitoring via ML</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Patented computer vision and machine learning algorithm that scans vehicle tires to accurately gauge tread depth wear, predicting blowout risk and maintenance thresholds.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Python</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">OpenCV</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">BRISQUE</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">IPR India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insurance & Financial Web Platform -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-brand-cyan bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
+                Web Application
+              </span>
+              <span class="text-xs font-mono text-slate-400">Live Deployed</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Interactive Insurance & Advisory Portal</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Responsive client-facing web application featuring dynamic financial calculation engines, policy tier comparisons, and custom DOM-manipulated user quote workflows.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">JavaScript</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">HTML5/CSS3</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">GitHub Pages</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAG Agent & Data Engineering -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-brand-emerald bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
+                AI & Data Automation
+              </span>
+              <span class="text-xs font-mono text-slate-400">Production Ready</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">SQL Agent RAG & Playwright Scrapers</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Intelligent Retrieval-Augmented Generation agent querying structured relational databases using LLM tool calling, paired with headless browser web scrapers for automated data feeds.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Python</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Playwright</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">LLM Tool Calling</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">SQLite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steganography & Alternate Authentication -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400 bg-slate-800 px-2.5 py-1 rounded">
+                Cybersecurity
+              </span>
+              <span class="text-xs font-mono text-slate-400">Academic Project</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Alternate Auth & Steganography Engine</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Sequence-based visual image authentication scheme eliminating conventional text passwords, coupled with an LSB spatial image steganography concealment module.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Python</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Cryptography</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Image Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Distributed Big Data & Shuffling Exploration -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">
+                Big Data
+              </span>
+              <span class="text-xs font-mono text-slate-400">Core Engineering</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Spark Distributed Shuffling & SQL</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Performance analysis comparing map-side combiner partitions (`reduceByKey`) versus network-wide shuffling (`groupByKey`) across high-throughput data processing pipelines.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Apache Spark</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Hive</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hardware & Embedded Systems -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-mono text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded border border-teal-500/20">
+                IoT / Embedded
+              </span>
+              <span class="text-xs font-mono text-slate-400">ECE Distinction</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">RFID Smart Attendance System</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hardware-integrated RFID transponder logging system with microcontroller firmware interfacing for instant student check-in and centralized database sync.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Embedded C</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">Microcontrollers</span>
+              <span class="text-[11px] font-mono bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">RFID</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Developer CLI / Shell -->
+    <section id="terminal" class="space-y-6" data-aos="zoom-in-up" data-aos-duration="800">
+      <div>
+        <span class="text-brand-cyan font-mono text-xs uppercase tracking-widest">Interactive Terminal</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Direct Developer Shell</h2>
+      </div>
+
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden font-mono shadow-2xl">
+        <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+            <span class="text-xs text-slate-400 ml-2">guest@murugappan-vps:~ (bash)</span>
+          </div>
+          <span class="text-[11px] text-slate-400">Type 'help' for commands</span>
+        </div>
+
+        <div id="cli-output" class="p-6 h-64 overflow-y-auto space-y-2 text-xs sm:text-sm text-slate-300">
+          <div>Murugappan PR Interactive Shell v2.4.0</div>
+          <div>Type <span class="text-brand-cyan">skills</span>, <span class="text-brand-cyan">experience</span>, <span class="text-brand-cyan">patent</span>, <span class="text-brand-cyan">contact</span>, or <span class="text-brand-cyan">clear</span>.</div>
+        </div>
+
+        <form id="cli-form" class="bg-slate-950/80 px-6 py-3 border-t border-slate-800 flex items-center gap-3">
+          <span class="text-brand-cyan font-bold">&gt;</span>
+          <input type="text" id="cli-input" class="bg-transparent w-full text-white text-xs sm:text-sm focus:outline-none placeholder-slate-600 font-mono" placeholder="Type a command and press Enter..." autocomplete="off">
+        </form>
+      </div>
+    </section>
+
+    <!-- Technical Stack Grid -->
+    <section id="skills" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
+      <div>
+        <span class="text-brand-emerald font-mono text-xs uppercase tracking-widest">Technical Arsenal</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Core Competencies & Tooling</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 hover:-translate-y-1 transition-all duration-300">
+          <h4 class="text-sm font-bold text-white flex items-center gap-2">
+            <i data-lucide="code" class="w-4 h-4 text-brand-cyan"></i> Languages
+          </h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Python (Primary OOP, API, Async), JavaScript (ES6+), C, Basics of Java, SQL (MySQL, SQLite), HTML5/CSS3.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 hover:-translate-y-1 transition-all duration-300">
+          <h4 class="text-sm font-bold text-white flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-brand-emerald"></i> Enterprise & PLM
+          </h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Dassault Systèmes 3DEXPERIENCE, REST WebServices, CDOCS Automation, Databricks Integration, Excel Loaders.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 hover:-translate-y-1 transition-all duration-300">
+          <h4 class="text-sm font-bold text-white flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-brand-violet"></i> Regulated Validation
+          </h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            GxP Life Sciences Compliance, HP ALM Protocol Management, IQ/OQ Documentation & Pre/Post Executions.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 hover:-translate-y-1 transition-all duration-300">
+          <h4 class="text-sm font-bold text-white flex items-center gap-2">
+            <i data-lucide="cpu" class="w-4 h-4 text-teal-400"></i> AI, Data & Automation
+          </h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Playwright Scraping, LLM Agent Tool Calling, RAG Systems, OpenCV Image Analysis, Git, Apache Spark.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Availability -->
+    <section id="contact" class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800 text-center space-y-6" data-aos="zoom-in" data-aos-duration="800">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-cyan-500/10 text-brand-cyan border border-brand-cyan/25">
+        <span class="w-2 h-2 rounded-full bg-brand-cyan"></span> Open for High-Impact Software Engineering Roles
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white">Let's build something exceptional.</h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+        Available to work anywhere across India and internationally. Whether it's enterprise backend engineering, automated pipelines, or data architecture, feel free to reach out directly.
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
+        <a href="mailto:mrprmurugappan@gmail.com" class="px-6 py-3 rounded-xl bg-brand-cyan text-slate-950 font-bold text-sm hover:opacity-90 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] active:scale-95 transition-all flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4"></i> mrprmurugappan@gmail.com
+        </a>
+        <a href="tel:+919444388419" class="px-6 py-3 rounded-xl glass-card border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 hover:text-white active:scale-95 transition-all flex items-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4"></i> +91 9444388419
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 py-8 text-center text-xs font-mono text-slate-400">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>Designed & Built by Murugappan PR • B.E ECE (Distinction, CGPA 8.58)</div>
+      <div>Hosted on GitHub Pages / Vercel</div>
+    </div>
+  </footer>
+
+  <!-- Scripts: AOS, Custom Interactions & Smooth Transitions -->
+  <script>
+    // 1. Initialize Icons & AOS (Animate On Scroll)
+    lucide.createIcons();
+    AOS.init({
+      once: true,
+      offset: 70,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+
+    // 2. Interactive Spotlight Cursor Follower
+    const cursorGlow = document.getElementById('cursor-glow');
+    window.addEventListener('mousemove', (e) => {
+      cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    });
+
+    // 3. Smooth Native Navigation (No Instant Jumps)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.length > 1) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+
+    // 4. Architecture Flow Simulator with Smooth Step Fade Transitions
+    const flows = {
+      pdf: {
+        step1: ["PLM Object Trigger", "3DEXPERIENCE lifecycle event or API webhook triggers Python automation service."],
+        step2: ["CDOCS Assembly", "Python utility extracts structured metadata and compiles regulatory compliant PDF documentation."],
+        step3: ["Attachment Ingestion", "Invokes Dassault Systèmes REST endpoints to lock and attach PDF to target PLM parent node."],
+        step4: ["ALM Qualification Log", "Audit trail committed under GxP standards; IQ/OQ execution records saved into HP ALM."]
+      },
+      databricks: {
+        step1: ["Object Query Filter", "Python scheduled worker extracts newly stamped/modified engineering objects via 3DS API."],
+        step2: ["Schema Marshaling", "Transforms nested Dassault PLM JSON responses into standardized Parquet/tabular formats."],
+        step3: ["Databricks Lakehouse Sink", "Loads structured tables into Databricks bronze/silver delta tables for Amgen enterprise BI."],
+        step4: ["Integrity Check", "Executes automated parity checks against source PLM counts with alert notifications."]
+      },
+      loader: {
+        step1: ["Excel Schema Parse", "Validates bulk business attributes, part hierarchies, and relationship matrices from XLSX."],
+        step2: ["Pre-flight Validation", "Checks attribute existence, permissible values, and role permissions prior to PLM commit."],
+        step3: ["Batch Object Creation", "Executes queued asynchronous web service calls into 3DS to generate and link objects."],
+        step4: ["Audit & Error Log", "Outputs color-coded post-execution Excel log detailing successful IDs and rollback reasons."]
+      }
+    };
+
+    function switchFlow(type) {
+      const stepCards = document.querySelectorAll('.flow-step-card');
+      
+      stepCards.forEach(card => card.classList.add('step-animating'));
+
+      setTimeout(() => {
+        const data = flows[type];
+        document.getElementById('step1-title').innerText = data.step1[0];
+        document.getElementById('step1-desc').innerText = data.step1[1];
+        document.getElementById('step2-title').innerText = data.step2[0];
+        document.getElementById('step2-desc').innerText = data.step2[1];
+        document.getElementById('step3-title').innerText = data.step3[0];
+        document.getElementById('step3-desc').innerText = data.step3[1];
+        document.getElementById('step4-title').innerText = data.step4[0];
+        document.getElementById('step4-desc').innerText = data.step4[1];
+
+        stepCards.forEach(card => card.classList.remove('step-animating'));
+      }, 250);
+
+      ['pdf', 'databricks', 'loader'].forEach(key => {
+        const btn = document.getElementById('btn-' + key);
+        if (key === type) {
+          btn.className = "px-4 py-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]";
+        } else {
+          btn.className = "px-4 py-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700";
+        }
+      });
+    }
+
+    // 5. Interactive Terminal Engine
+    const cliOutput = document.getElementById('cli-output');
+    const cliInput = document.getElementById('cli-input');
+    const cliForm = document.getElementById('cli-form');
+
+    const commands = {
+      help: "Available commands:\n • skills: View primary technical stack\n • experience: View role details at TCS (Amgen)\n • patent: View published patent details\n • contact: View email, phone, and relocation availability\n • clear: Clear the terminal console",
+      skills: "Technical Arsenal:\n • Languages: Python, JavaScript, C, Java (Basics), SQL\n • Enterprise: Dassault Systèmes 3DEXPERIENCE PLM, REST Web Services, Databricks\n • Compliance: GxP IQ/OQ Protocols, HP ALM Approvals\n • Automation: Playwright, RAG Agents, Data Pipelines",
+      experience: "TCS (Client: Amgen) - Systems Engineer (Nov 2024 - Present):\n • Auto-PDF Engine: Automated CDOCS generation & 3DS object attachments\n • EDF Integration: Extracted PLM objects to Databricks\n • Data Loaders: Excel-driven batch object generator\n • Validations: IQ, OQ authoring & execution approvals in HP ALM",
+      patent: "Patent Application No: 202441034951 A\nTitle: Secure Tire Using Machine Learning\nSummary: Vision & ML-based system determining tire tread depth health to avert blowouts.",
+      contact: "Contact Info:\n • Email: mrprmurugappan@gmail.com\n • Phone: +91 9444388419\n • Location: Chennai / Bengaluru, India (Open to work anywhere!)"
+    };
+
+    cliForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = cliInput.value.trim().toLowerCase();
+      if (!val) return;
+
+      const cmdLine = document.createElement('div');
+      cmdLine.innerHTML = `<span class="text-brand-cyan">&gt;</span> <span class="text-white">${val}</span>`;
+      cliOutput.appendChild(cmdLine);
+
+      if (val === 'clear') {
+        cliOutput.innerHTML = '';
+      } else if (commands[val]) {
+        const resp = document.createElement('div');
+        resp.className = 'text-slate-400 whitespace-pre-line pl-2';
+        resp.innerText = commands[val];
+        cliOutput.appendChild(resp);
+      } else {
+        const err = document.createElement('div');
+        err.className = 'text-rose-400 pl-2';
+        err.innerText = `bash: command not found: ${val}. Type 'help' to inspect commands.`;
+        cliOutput.appendChild(err);
+      }
+
+      cliInput.value = '';
+      cliOutput.scrollTop = cliOutput.scrollHeight;
+    });
+  </script>
+</body>
+</html>
